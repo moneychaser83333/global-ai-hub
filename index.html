@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global AI Tools Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #333333;
+            --card-bg: #f9f9f9;
+            --border: #e0e0e0;
+            --accent: #6a0dad;
+            --accent-hover: #8a2be2;
+        }
+        body.dark {
+            --bg: #121212;
+            --text: #ffffff;
+            --card-bg: #1e1e1e;
+            --border: #333333;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #6a0dad, #8a2be2);
+            color: white;
+        }
+        header h1 { font-size: 2.5rem; margin: 0 0 10px; }
+        header p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
+        
+        .search-container { display: flex; justify-content: center; margin-top: 20px; }
+        #search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-title { text-align: center; margin: 40px 0 30px; font-size: 1.8rem; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin: 0 0 10px; color: var(--accent); }
+        body.dark .card h3 { color: #bb86fc; }
+        .card p { font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 20px; }
+        .card .price { font-weight: 600; font-size: 0.85rem; margin-bottom: 15px; opacity: 0.8; }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn:hover { background-color: var(--accent-hover); }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .cat-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 100;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="toggle-btn" id="theme-toggle">Toggle Dark Mode</button>
+
+    <header>
+        <div class="container">
+            <h1>Discover the Best AI Tools 2026</h1>
+            <p>Global directory for productivity, content creation, image generation, coding, marketing and more</p>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search AI tools...">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Featured AI Tools</h2>
+        <div class="grid" id="tools-grid">
+            <!-- Tool 1 -->
+            <div class="card">
+                <h3>ChatGPT</h3>
+                <p>AI chat & writing: A powerful language model for conversations and content generation.</p>
+                <div class="price">Free/Paid</div>
+                <a href="https://chat.openai.com" target="_blank" class="btn">Try Now</a>
+            </div>
+            <!-- Tool 2 -->
+            <div class="card">
+                <h3>Midjourney</h3>
+                <p>Image generation: Create stunning images from text prompts with advanced AI.</p>
+                <div class="price">Paid</div>
+                <a href="https://www.midjourney.com" target="_blank" class="btn">Try Now</a>
+            </div>
+            <!-- Tool 3 -->
+            <div class="card">
+                <h3>Claude</h3>
+                <p>Advanced reasoning: An AI assistant focused on helpful, harmless, and honest interactions.</p>
+                <div class="price">Free/Paid</div>
+                <a href="https://claude.ai" target="_blank" class="btn">Try Now</a>
+            </div>
+            <!-- Tool 4 -->
+            <div class="card">
+                <h3>Notion AI</h3>
+                <p>Productivity: Integrate AI directly into your Notion workspace for summaries, drafts, and ideas.</p>
+                <div class="price">Paid</div>
+                <a href="https://www.notion.so/product/ai" target="_blank" class="btn">Try Now</a>
+            </div>
+            <!-- Tool 5 -->
+            <div class="card">
+                <h3>Jasper</h3>
+                <p>Content creation: AI writing assistant for marketing copy, blog posts, and more.</p>
+                <div class="price">Paid</div>
+                <a href="https://www.jasper.ai" target="_blank" class="btn">Try Now</a>
+            </div>
+            <!-- Tool 6 -->
+            <div class="card">
+                <h3>Runway</h3>
+                <p>Video generation: AI magic tools for video editing and generative video creation.</p>
+                <div class="price">Paid</div>
+                <a href="https://runwayml.com" target="_blank" class="btn">Try Now</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">Categories</h2>
+        <div class="categories">
+            <div class="cat-item">Productivity</div>
+            <div class="cat-item">Content Creation</div>
+            <div class="cat-item">Image & Video</div>
+            <div class="cat-item">Coding & Dev</div>
+            <div class="cat-item">Marketing & Sales</div>
+            <div class="cat-item">Free Tools</div>
+        </div>
+    </main>
+
+    <footer>
+        Affiliate links may be used | Global AI Hub 2026
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+
+        // Search Filtering
+        const searchInput = document.getElementById('search-input');
+        const cards = document.querySelectorAll('.card');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            
+            cards.forEach(card => {
+                const name = card.querySelector('h3').innerText.toLowerCase();
+                const desc = card.querySelector('p').innerText.toLowerCase();
+                
+                if (name.includes(query) || desc.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
